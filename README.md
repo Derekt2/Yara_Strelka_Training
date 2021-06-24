@@ -1,5 +1,6 @@
 # Yara_Strelka_Training
 
+docker network create net
 Running:
 
 rename prod.env.example to .env and set values accordingly. Then run using:

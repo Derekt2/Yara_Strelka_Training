@@ -53,9 +53,18 @@ services:
     ports:
       - '2222:22'
     restart: unless-stopped
+    networks:
+      - net
+    volumes:  
+      - ~/YaraShare:/YaraShare
 
 volumes:
   dbinit:
     driver: local
   dbdata:
     driver: local
+
+
+networks: 
+  net:
+    external: true

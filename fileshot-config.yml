@@ -1,0 +1,18 @@
+client: 'fileshot-sample-config'
+conn:
+  server: 'strelka_frontend:57314'
+  #cert: './strelka.crt'
+  timeout:
+    dial: 5s
+    file: 5m
+throughput:
+  concurrency: 8
+  chunk: 98304
+  delay: 1s
+files:
+  patterns:
+    - './testing'
+  delete: false
+  gatekeeper: false
+response:
+  log: './output/out.log'

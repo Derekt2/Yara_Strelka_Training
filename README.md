@@ -1,7 +1,6 @@
 
-# Yara_Strelka_Training
+# YARA Strelka Training
 
-## Overview
 The purpose of this training is to act as an environment for users to build YARA rules and submit files to Strelka for practicals given during ([FIRSTCon 2021's Workshop: Using YARA & Strelka to Identify & Detect Malware](https://events.first.org/session_catalog/#/attendee/80DBEEC9-CA26-4408-BB12-A7E2E964DB04/catalog)).
 
 This repository includes the following technologies:

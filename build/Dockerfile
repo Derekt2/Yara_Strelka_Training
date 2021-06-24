@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   flex \
   gcc \
   git \
+  jq \
   libmagic-dev \
   libprotobuf-dev \
   libssl-dev \
@@ -42,8 +43,12 @@ RUN cd /tmp \
 RUN git clone https://github.com/target/strelka.git /opt/strelka
 
 WORKDIR /opt
-COPY malware.zip /opt
-RUN unzip -P $ZIP_PASS malware.zip && rm -rf malware.zip
+COPY . /opt/
+
+# COPY malware.zip /opt
+# COPY strelka-fileshot /opt
+# COPY fileshot-config.yml /opt
+#RUN unzip -P $ZIP_PASS malware.zip && rm -rf malware.zip
 
 #setup user
 RUN useradd -rm -s /bin/bash -u 1000 $SSH_USERNAME
@@ -51,9 +56,13 @@ RUN echo "$SSH_USERNAME:$SSH_PASSWORD" | chpasswd
 RUN echo "uuid=\$(cat /proc/sys/kernel/random/uuid |cut -d '-' -f 1) \
 && mkdir \$uuid && cd \$uuid \
 && mkdir strelka \
+&& mkdir output \
+&& mkdir exercise-4 \
+&& mkdir exercise-5 \
 && ln -s /opt/malware malware \
-&& cp -r /opt/strelka/src/python/strelka/scanners/ ./strelka/ \
-&& cp -r /opt/strelka/configs/python/backend/ ./strelka/ \
+&& cp -R /opt/exercise-4/* exercise-4/ \
+&& cp -R /opt/exercise-5/* exercise-5/ \
+&& cp /opt/fileshot-config.yml fileshot-config.yml \
 && HOME=~/\$uuid" >> /home/$SSH_USERNAME/.bashrc
 RUN chmod 701 /home && \
   sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \

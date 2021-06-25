@@ -15,4 +15,4 @@ files:
   delete: false
   gatekeeper: false
 response:
-  log: './output/exercise-5.log'
+  log: './exercise-5.log'

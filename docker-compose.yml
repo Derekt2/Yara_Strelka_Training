@@ -56,7 +56,7 @@ services:
     networks:
       - net
     volumes:  
-      - ~/YaraShare:/YaraShare
+      - ./YaraShare:/YaraShare
 
 volumes:
   dbinit:

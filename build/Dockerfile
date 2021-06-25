@@ -43,10 +43,8 @@ RUN cd /tmp \
 WORKDIR /opt
 COPY . /opt/
 
-# COPY malware.zip /opt
-# COPY strelka-fileshot /opt
-# COPY fileshot-config.yml /opt
-#RUN unzip -P $ZIP_PASS malware.zip && rm -rf malware.zip
+COPY malware.zip /opt
+RUN unzip -P $ZIP_PASS malware.zip && rm -rf malware.zip
 
 #setup user
 RUN useradd -rm -s /bin/bash -u 1000 $SSH_USERNAME

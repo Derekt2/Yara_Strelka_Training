@@ -19,10 +19,11 @@ In addition to this repository, users should also stand up a modified version of
 ## Setup
 1. Clone this repo.
 2. Clone the modified Strelka repo (https://github.com/phutelmyer/strelka).
-3. Run `docker network create net` to create the network the two repositories will communicate on.
-4. Rename `prod.env.example` to `.env` and set values accordingly.
-5. Run `docker-compose up` while in the current working directory for the Strelka repo.
-6. Run `docker-compose -f build/docker-compose.yml up` while in the current working directory for the Strelka repo.
+3. Modify `YaraShare` location in forked Strelka docker-compose.
+4. Run `docker network create net` to create the network the two repositories will communicate on.
+5. Rename `prod.env.example` to `.env` and set values accordingly.
+6. Run `docker-compose up` while in the current working directory for the Strelka repo.
+7. Run `docker-compose -f build/docker-compose.yml up` while in the current working directory for the Strelka repo.
 
 ## Usage
 With setup complete, you will have both the remote server and Strelka running on the same docker network. Users can now access the SSH server with the following steps:

@@ -40,8 +40,6 @@ RUN cd /tmp \
   && make install \
   && ldconfig
 
-RUN git clone https://github.com/target/strelka.git /opt/strelka
-
 WORKDIR /opt
 COPY . /opt/
 

@@ -24,7 +24,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   make \
   openssh-server \
   pkg-config \
-  unzip
+  unzip \
+  python3
 
 # install yara
 RUN cd /tmp \
@@ -49,15 +50,21 @@ RUN unzip -P $ZIP_PASS malware.zip && rm -rf malware.zip
 #setup user
 RUN useradd -rm -s /bin/bash -u 1000 $SSH_USERNAME
 RUN echo "$SSH_USERNAME:$SSH_PASSWORD" | chpasswd
+RUN mv /opt/StringFinder.py /bin/ && chmod +x /bin/StringFinder.py
 RUN echo "uuid=\$(cat /proc/sys/kernel/random/uuid |cut -d '-' -f 1) \
 && mkdir \$uuid && cd \$uuid \
 && mkdir strelka \
 && mkdir output \
+&& mkdir exercise-1 \
+&& mkdir exercise-2 \
+&& mkdir exercise-3 \
 && mkdir exercise-4 \
 && mkdir exercise-5 \
 && ln -s /opt/malware malware \
+&& ln -s /opt/example.yar exercise-1/example.yar \
 && cp -R /opt/exercise-4/* exercise-4/ \
 && cp -R /opt/exercise-5/* exercise-5/ \
+&& cp malware/*_*.vbs exercise-2/ \
 && cp malware/intriguing_France.vbs exercise-5/samples/  \
 && ln -s /YaraShare exercise-5/YaraShare \
 && cp /opt/fileshot-config.yml fileshot-config.yml \

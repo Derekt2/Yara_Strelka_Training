@@ -1,0 +1,8 @@
+build/
+docker-compose.yml
+prod.env.example
+README.md
+.env
+.gitignore
+.git
+LICENSE

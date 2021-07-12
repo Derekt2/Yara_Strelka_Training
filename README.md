@@ -22,6 +22,7 @@ In addition to this repository, users should also stand up a modified version of
 3. Modify `YaraShare` location in forked Strelka docker-compose.
 4. Run `docker network create net` to create the network the two repositories will communicate on.
 5. Rename `prod.env.example` to `.env` and set values accordingly.
+6. Ensure `~/YaraShare` on the host has accessible permissions.
 6. Run `docker-compose up` while in the current working directory for the Strelka repo.
 7. Run `docker-compose -f build/docker-compose.yml up` while in the current working directory for the Strelka repo.
 

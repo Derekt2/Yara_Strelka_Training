@@ -11,7 +11,7 @@ throughput:
   delay: 1s
 files:
   patterns:
-    - './samples/*.vbs'
+    - '../malware/*.vbs'
   delete: false
   gatekeeper: false
 response:

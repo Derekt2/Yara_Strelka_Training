@@ -56,14 +56,13 @@ services:
     networks:
       - net
     volumes:  
-      - ./YaraShare:/YaraShare
+      - ~/YaraShare:/YaraShare
 
 volumes:
   dbinit:
     driver: local
   dbdata:
     driver: local
-
 
 networks: 
   net:

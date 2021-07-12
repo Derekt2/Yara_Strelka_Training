@@ -1,7 +1,7 @@
-rule Sample_Exercise5 {
+rule Sample_Exercise5_Margarita {
     meta:
         author = "Derek Thomas & Paul Hutelmyer"
-        description = "Matches all words in test file"
+        description = "Matches keyword in VBS file"
         date = "06/22/2021"
         version = "1.0"
         license = "N/A"
@@ -11,9 +11,7 @@ rule Sample_Exercise5 {
         scope ="['testing', 'hunting']"
         intel ="['N/A']"
     strings:
-        $string1 = "hello"
-        $string2 = "exercise"
-        $string3 = "five"
+        $string1 = "margaritasexy
 	
     condition:
         all of them 

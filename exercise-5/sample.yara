@@ -11,7 +11,7 @@ rule Sample_Exercise5_Margarita {
         scope ="['testing', 'hunting']"
         intel ="['N/A']"
     strings:
-        $string1 = "margaritasexy
+        $string1 = "margaritasexy"
 	
     condition:
         all of them 

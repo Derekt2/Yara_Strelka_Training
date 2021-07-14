@@ -28,8 +28,8 @@ services:
   guac:
     image: guacamole/guacamole:latest
     restart: unless-stopped
-    # ports:
-    #   - "8080:8080"
+    ports:
+      - "8080:80"
     environment:
       GUACD_HOSTNAME: "127.0.0.1"
       POSTGRES_HOSTNAME: "127.0.0.1"
@@ -39,7 +39,7 @@ services:
     depends_on:
       - postgres
       - guacd
-    network_mode: host
+#     network_mode: host
   
   openssh-server:
     build:

@@ -29,7 +29,7 @@ services:
     image: guacamole/guacamole:latest
     restart: unless-stopped
     ports:
-      - "8080:80"
+      - "80:8080"
     environment:
       GUACD_HOSTNAME: "127.0.0.1"
       POSTGRES_HOSTNAME: "127.0.0.1"

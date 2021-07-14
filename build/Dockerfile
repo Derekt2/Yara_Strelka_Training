@@ -65,7 +65,6 @@ RUN echo "uuid=\$(cat /proc/sys/kernel/random/uuid |cut -d '-' -f 1) \
 && cp -R /opt/exercise-4/* exercise-4/ \
 && cp -R /opt/exercise-5/* exercise-5/ \
 && cp malware/*_*.vbs exercise-2/ \
-&& cp malware/intriguing_France.vbs exercise-5/samples/  \
 && ln -s /YaraShare exercise-5/YaraShare \
 && cp /opt/fileshot-config.yml fileshot-config.yml \
 && HOME=~/\$uuid" >> /home/$SSH_USERNAME/.bashrc
